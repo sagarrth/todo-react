@@ -1,6 +1,8 @@
 import React from 'react';
+import createClass from 'create-react-class';
+import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 
-const InputComponent = React.createClass({
+const InputComponent = createClass({
   getInitialState () {
     return {
       text: ''
@@ -21,9 +23,13 @@ const InputComponent = React.createClass({
   render () {
     return (
       <section>
-        <form onSubmit={this.handleTextSubmit}>
-          <input type='text' value={this.state.text} onChange={this.handleTextChange} />
-        </form>
+        <Form inline onSubmit={this.handleTextSubmit}>
+          <FormGroup bsSize="large">
+            <FormControl type='text' value={this.state.text} onChange={this.handleTextChange} />
+          </FormGroup>
+          {' '}
+          <Button bsStyle="primary" bsSize="large">Add</Button>
+        </Form>
       </section>
     );
   }
