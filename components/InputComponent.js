@@ -28,7 +28,7 @@ const InputComponent = createClass({
             <FormControl type='text' value={this.state.text} onChange={this.handleTextChange} />
           </FormGroup>
           {' '}
-          <Button bsStyle="primary" bsSize="large">Add</Button>
+          <Button bsStyle="primary" bsSize="large" onClick={this.handleTextSubmit}>Add</Button>
         </Form>
       </section>
     );
