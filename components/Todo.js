@@ -13,11 +13,13 @@ const Todo = createClass({
     }
   },
   addItemList (value) {
-    this.setState((prevState) => {
-      return {
-        itemList: prevState.itemList.concat({value, id: Date.now(), completed: false})
-      }
-    })
+    if(value) {
+      this.setState((prevState) => {
+        return {
+          itemList: prevState.itemList.concat({value, id: Date.now(), completed: false})
+        }
+      });
+    }
   },
   deleteItemList (id) {
     const newItemList = this.state.itemList.filter((item) => item.id!==id);
