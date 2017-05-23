@@ -4,8 +4,8 @@ import { ListGroup, ListGroupItem, Table, Button } from 'react-bootstrap';
 
 const TodoList = createClass({
   prepareRows () {
-    let aStyle = {}
     let data = this.props.workItems.map((item) => {
+      let aStyle = {};
       aStyle.textDecoration = item.completed ? 'line-through' : 'none';
       return (
         <tr key={item.id}>
