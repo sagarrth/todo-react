@@ -5,6 +5,7 @@ import { render } from 'react-dom';
 import Header from './Header';
 import InputComponent from './InputComponent';
 import TodoList from './TodoList';
+import Footer from './Footer';
 
 const Todo = createClass({
   getInitialState () {
@@ -59,6 +60,11 @@ const Todo = createClass({
         <Row>
           <Col md={12} style={{marginTop:'20px'}}>
             <TodoList workItems = {this.state.itemList} deleteItem={this.deleteItemList} completeItem={this.completeItemList}/>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Footer />
           </Col>
         </Row>
       </Grid>
